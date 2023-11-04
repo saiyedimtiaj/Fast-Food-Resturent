@@ -2,7 +2,7 @@
 
 const About = () => {
     return (
-        <div className="flex flex-col lg:flex-row px-5 my-10 lg:my16">
+        <div className="flex flex-col lg:flex-row items-center px-5 my-10 lg:my16">
             <div className="flex-1">
                 <img src="https://cafeu-html.codebasket.net/cafeu-html/assets/img/about/3-about.png" alt="" />
             </div>
@@ -15,6 +15,13 @@ const About = () => {
                         <img src="https://cafeu-html.codebasket.net/cafeu-html/assets/img/icon/3-7.png" alt="" />
                         <div>
                             <h2 className="text-2xl font-bold">Rating Star </h2>
+                            <p className="max-w-[150px]">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                        <img src="https://cafeu-html.codebasket.net/cafeu-html/assets/img/icon/3-8.png" alt="" />
+                        <div>
+                            <h2 className="text-2xl font-bold">Free species </h2>
                             <p className="max-w-[150px]">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
                         </div>
                     </div>
