@@ -1,10 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
     const {signin} = useAuth()
-    const navegate = useNavigate()
+    const navegate = useNavigate();
+    const location = useLocation();
 
     const handleLogin = event => {
         event.preventDefault();
@@ -14,8 +15,7 @@ const Login = () => {
         
         signin(email,password)
         .then(()=>{
-            // console.log(user);
-            navegate('/')
+          navegate(location.state ? location.state : '/');
         })
         .catch(err=>{
             console.log(err.message);

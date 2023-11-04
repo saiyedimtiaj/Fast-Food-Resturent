@@ -1,23 +1,30 @@
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from '../../Hooks/useAuth'
+import { updateProfile } from "firebase/auth";
+import auth from "../../Config/Firebase.config";
 
 const Register = () => {
     const {register} = useAuth();
     const navegate = useNavigate()
+    const location = useLocation()
 
   const handleRegister = (event) => {
     event.preventDefault();
     const form = event.target;
-    // const name = form.name.value;
-    // const image = form.image.value;
+    const name = form.name.value;
+    const image = form.image.value;
     const email = form.email.value;
     const password = form.password.value;
 
     register(email,password)
     .then(()=>{
-        // console.log(user);
-        navegate('/')
+        updateProfile(auth.currentUser,{
+          displayName: name,
+          photoURL:image
+        }).then(()=>{
+          navegate(location.state ? location.state : '/');
+        })
     })
     .catch(err=>{
         console.log(err.message);

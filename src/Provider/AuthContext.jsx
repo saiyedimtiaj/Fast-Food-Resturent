@@ -27,6 +27,7 @@ const AuthContext = ({children}) => {
         const subScribe = () => {
             onAuthStateChanged(auth,currentUser=>{
                 setUser(currentUser)
+                setLoading(false)
             })
         }
         return ()=>{

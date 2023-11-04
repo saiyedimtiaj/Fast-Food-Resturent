@@ -24,20 +24,20 @@ const Navbar = () => {
         Home
       </NavLink>
       <NavLink
-        to="/"
+        to="/allfood"
         className={({ isActive, isPending }) =>
           isPending ? "" : isActive ? "" : ""
         }
       >
-        Home
+        All Food Items
       </NavLink>
       <NavLink
-        to="/"
+        to="/blog"
         className={({ isActive, isPending }) =>
           isPending ? "" : isActive ? "" : ""
         }
       >
-        Home
+        Blog
       </NavLink>
     </>
   );
@@ -63,7 +63,7 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content gap-3 mt-3 z-50 px-2 py-4 shadow bg-base-100 rounded-box w-52"
           >
             {links}
           </ul>
@@ -87,6 +87,25 @@ const Navbar = () => {
         </p>
       </Link> : <button onClick={handleLogout} className="bg-blue-600 flex items-center gap-1 px-5 py-2 rounded font-medium text-white">Log Out</button>
        }
+        {
+          user && <div className="dropdown dropdown-end ml-2">
+          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+            <div className="w-10 rounded-full">
+              <img src={user.photoURL}/>
+            </div>
+          </label>
+          <ul tabIndex={0} className="mt-3 z-50 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+            <li>
+              <p className="justify-between bg-slate-300 uppercase font-bold">
+                {user.displayName}
+              </p>
+            </li>
+            <li><a>My added item</a></li>
+            <li><a>Add a item</a></li>
+            <li><a>My ordered item</a></li>
+          </ul>
+        </div>
+        }
       </div>
     </div>
   );
