@@ -7,6 +7,7 @@ const Footer = () => {
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7">
         <div>
+          <img className="mb-4" src="https://cafeu-html.codebasket.net/cafeu-html/assets/img/logo/logo-3.png" alt="" />
           <div className="font-oswald font-medium uppercase text-sm cursor-pointer">
             Find a store
           </div>
@@ -78,7 +79,7 @@ const Footer = () => {
       <div className="flex justify-between mt-10 flex-col md:flex-row gap-[10px] md:gap-0">
         {/* LEFT START */}
         <div className='text-black cursor-pointer text-center md:text-left'>
-          © 2023 Nike, Inc. All Rights Reserved
+          © 2023 Cafue, Inc. All Rights Reserved
         </div>
         {/* LEFT END */}
 

@@ -68,7 +68,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <img src="https://cafeu-html.codebasket.net/cafeu-html/assets/img/logo/logo-3.png" alt="" />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-3 text-lg font-semibold">
