@@ -9,8 +9,8 @@ import { Pagination } from "swiper/modules";
 
 const Banner = () => {
   return (
-    <>
-      <Swiper
+    <div className="bg-[#fffaf0]">
+        <Swiper
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
@@ -21,7 +21,7 @@ const Banner = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className="flex flex-col-reverse items-center bg-[#FFFAF0] pt-8 justify-between gap-10 lg:flex-row min-h-[calc(100vh-90px)] px-5">
+          <div className="flex flex-col-reverse items-center container mx-auto pt-8 justify-between gap-10 lg:flex-row min-h-[calc(100vh-90px)] px-5">
             <div className="flex-1">
               <h1 className="text-5xl font-bold mb-5">
                 The Best Food Monger in Your city Area
@@ -40,7 +40,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex flex-col-reverse items-center bg-[#FFFAF0] pt-8 justify-between gap-10 lg:flex-row min-h-[calc(100vh-90px)] px-5">
+          <div className="flex flex-col-reverse items-center container mx-auto pt-8 justify-between gap-10 lg:flex-row min-h-[calc(100vh-90px)] px-5">
             <div className="flex-1">
               <h1 className="text-5xl font-bold mb-5">
                 Assian Lettuce Erap Chopped Salad Recipe
@@ -59,7 +59,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex flex-col-reverse items-center bg-[#FFFAF0] pt-8 justify-between gap-10 lg:flex-row min-h-[calc(100vh-90px)] px-5">
+          <div className="flex flex-col-reverse items-center container mx-auto pt-8 justify-between gap-10 lg:flex-row min-h-[calc(100vh-90px)] px-5">
             <div className="flex-1">
               <h1 className="text-5xl font-bold mb-5 leading-tight">
                 Defferent Spice For a Defferent Test
@@ -78,7 +78,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@
 
 const About = () => {
     return (
-        <div className="flex flex-col lg:flex-row items-center px-5 my-10 lg:my16">
+        <div className="flex flex-col lg:flex-row items-center container mx-auto px-5 my-10 lg:my16">
             <div className="flex-1">
                 <img src="https://cafeu-html.codebasket.net/cafeu-html/assets/img/about/3-about.png" alt="" />
             </div>

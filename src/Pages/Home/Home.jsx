@@ -1,5 +1,7 @@
 import About from "../../Components/About/About";
 import Banner from "../../Components/Banner/Banner";
+import Highlight from "../../Components/Highlight/Highlight";
+import News from "../../Components/News/News";
 
 
 const Home = () => {
@@ -7,6 +9,8 @@ const Home = () => {
         <>
             <Banner/>
             <About/>
+            <Highlight/>
+            <News/>
         </>
     );
 };

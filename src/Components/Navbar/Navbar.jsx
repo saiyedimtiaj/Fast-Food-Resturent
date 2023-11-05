@@ -101,7 +101,7 @@ const Navbar = () => {
               </p>
             </li>
             <li><a>My added item</a></li>
-            <li><a>Add a item</a></li>
+            <li><Link to='/add-item'>Add a item</Link></li>
             <li><a>My ordered item</a></li>
           </ul>
         </div>

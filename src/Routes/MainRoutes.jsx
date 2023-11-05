@@ -7,6 +7,9 @@ import PageError from "../Pages/PageError/PageError";
 import AllFood from "../Pages/AllFood/AllFood";
 import Blog from "../Pages/Blog/Blog";
 import PrivateRoute from "./PrivateRoute";
+import AddProduct from "../Pages/AddProduct/AddProduct";
+import SingleFood from "../Pages/SingleFood/SingleFood";
+import OrderedFood from "../Pages/OrderedFood/OrderedFood";
 
 const MainRoutes = createBrowserRouter([
     {
@@ -28,11 +31,25 @@ const MainRoutes = createBrowserRouter([
             },
             {
                 path:'/allfood',
-                element:<PrivateRoute><AllFood/></PrivateRoute>
+                element:<AllFood/>
+            },
+            {
+                path:'/allfood/:id',
+                element:<SingleFood/>,
+                loader:({params})=>fetch(`http://localhost:5000/all-food/${params.id}`)
             },
             {
                 path:'/blog',
-                element:<PrivateRoute><Blog/></PrivateRoute>
+                element:<Blog/>
+            },
+            {
+                path:'/add-item',
+                element:<PrivateRoute><AddProduct/></PrivateRoute>
+            },
+            {
+                path:'/allfood/:id/order',
+                element:<PrivateRoute><OrderedFood/></PrivateRoute>,
+                loader:({params})=>fetch(`http://localhost:5000/all-food/${params.id}`)
             }
         ]
     },
