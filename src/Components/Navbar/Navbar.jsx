@@ -100,9 +100,9 @@ const Navbar = () => {
                 {user.displayName}
               </p>
             </li>
-            <li><a>My added item</a></li>
+            <li><Link to='/myaddeditem'>My added item</Link></li>
             <li><Link to='/add-item'>Add a item</Link></li>
-            <li><a>My ordered item</a></li>
+            <li><Link to='/myorder'>My ordered item</Link></li>
           </ul>
         </div>
         }

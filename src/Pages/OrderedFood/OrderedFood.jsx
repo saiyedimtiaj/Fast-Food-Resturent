@@ -81,6 +81,8 @@ const OrderedFood = () => {
             </div>
             
           </div>
+          <input
+           type="submit" value='purchase Now' className="text-center cursor-pointer mt-5 mb-7 bg-blue-500 text-white py-3 w-full rounded font-medium hover:bg-blue-700" />
         </form>
       </div>
     </>
