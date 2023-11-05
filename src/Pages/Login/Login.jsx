@@ -1,6 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../Hooks/useAuth";
+import { toast } from "react-hot-toast";
 
 const Login = () => {
     const {signin} = useAuth()
@@ -16,9 +17,10 @@ const Login = () => {
         signin(email,password)
         .then(()=>{
           navegate(location.state ? location.state : '/');
+          toast.success('Log In Sucessfully')
         })
         .catch(err=>{
-            console.log(err.message);
+            toast.error(err.message);
         })
     } 
 

@@ -1,28 +1,36 @@
+import axios from "axios";
 import { useLoaderData } from "react-router-dom";
-import useAxios from "../../Hooks/useAxios";
+import useAuth from "../../Hooks/useAuth";
+import { toast } from "react-hot-toast";
 
 const OrderedFood = () => {
     const product = useLoaderData();
-    const axios = useAxios()
+    const {user} = useAuth();
 
     const handleOrder = event => {
       event.preventDefault();
       const form = event.target;
       const foodName = form.foodName.value;
-      const quentity = parseInt();
+      const quentity = parseInt(form.quentity.value);
       const price = form.price.value;
-      const userName = product?.userName;
-      const email = product?.email;
+      const userName = user?.userName;
+      const email = user?.email;
       const image = product?.image;
-
       const orderItem = {foodName,quentity,price,userName,email,image};
-      axios.post('/order',orderItem)
+
+      if(user.email === product.email){
+        return toast.error(`you Can't add this Item`)
+      }
+      else{
+        axios.post('http://localhost:5000/order',orderItem)
       .then(res=>{
+        toast.success('Your product is order Now ')
         console.log(res.data);
       })
       .catch(err=>{
-        console.log(err.message);
+        console.log(err);
       })
+      }
     }
   return (
     <>

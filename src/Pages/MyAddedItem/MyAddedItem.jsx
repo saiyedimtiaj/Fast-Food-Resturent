@@ -6,11 +6,10 @@ const MyAddedItem = () => {
   const [item, setItem] = useState([]);
   const { user } = useAuth();
   useEffect(() => {
-    fetch("http://localhost:5000/all-food")
+    fetch(`http://localhost:5000/all-food?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
-        const filter = data.filter((item) => item.email === user?.email);
-        setItem(filter);
+        setItem(data);
       });
   }, [user.email]);
   return (

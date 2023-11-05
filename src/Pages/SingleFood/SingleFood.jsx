@@ -2,7 +2,6 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const SingleFood = () => {
   const product = useLoaderData();
-  console.log(product);
   return (
     <>
     <div className=" h-[300px] px-5 flex flex-col justify-center" style={{backgroundImage:"url('../assets/image/page-ban-bg.png')",backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}>
