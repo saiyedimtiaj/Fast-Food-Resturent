@@ -13,7 +13,6 @@ const MyAddedItem = () => {
         setItem(filter);
       });
   }, [user.email]);
-  console.log(item);
   return (
     <>
       <div

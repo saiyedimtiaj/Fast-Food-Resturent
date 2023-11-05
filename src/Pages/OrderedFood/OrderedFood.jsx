@@ -1,12 +1,34 @@
 import { useLoaderData } from "react-router-dom";
+import useAxios from "../../Hooks/useAxios";
 
 const OrderedFood = () => {
     const product = useLoaderData();
+    const axios = useAxios()
+
+    const handleOrder = event => {
+      event.preventDefault();
+      const form = event.target;
+      const foodName = form.foodName.value;
+      const quentity = parseInt();
+      const price = form.price.value;
+      const userName = product?.userName;
+      const email = product?.email;
+      const image = product?.image;
+
+      const orderItem = {foodName,quentity,price,userName,email,image};
+      axios.post('/order',orderItem)
+      .then(res=>{
+        console.log(res.data);
+      })
+      .catch(err=>{
+        console.log(err.message);
+      })
+    }
   return (
     <>
       <h1 className="text-5xl font-semibold text-center mt-16">Order Now!</h1>
       <div className="mb-16 mx-auto p-5 max-w-4xl">
-        <form>
+        <form onSubmit={handleOrder}>
           <div className="w-full mt-3">
             <label htmlFor="food-Price" className="font-semibold">
               Food Name
