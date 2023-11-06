@@ -1,9 +1,12 @@
 import { useLoaderData } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import useAxios from "../../Hooks/useAxios";
+import { toast } from "react-hot-toast";
 
 const Update = () => {
     const {user} = useAuth();
     const food = useLoaderData()
+    const axios = useAxios()
 
     const handleAddItem = async (event) => {
         event.preventDefault()
@@ -19,12 +22,23 @@ const Update = () => {
         const description = form.description.value;
 
         const item = {foodName,category,image,quentity,price,userName,email,orgin,description}
+
+        axios.patch(`/all-food/${food?._id}`,item)
+        .then(res=>{
+            console.log(res.data);
+            if(res.data.modifiedCount === 1){
+                toast.success('update this product sucessfully')
+            }
+        })
+        .catch(err=>{
+            console.log(err.message);
+        })
                
     }
 
   return (
     <>
-      <h1 className="text-4xl font-bold text-center my-7">Add a Food Item</h1>
+      <h1 className="text-4xl font-bold text-center my-7">Update Food </h1>
       <div className="max-w-4xl mx-auto px-5 mb-20">
         <form onSubmit={handleAddItem}>
           <div className="flex flex-col md:flex-row items-center gap-3">

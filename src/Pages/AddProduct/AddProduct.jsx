@@ -17,8 +17,9 @@ const AddProduct = () => {
         const email = user?.email
         const orgin = form.orgin.value;
         const description = form.description.value;
+        const orderCount = 1
 
-        const item = {foodName,category,image,quentity,price,userName,email,orgin,description}
+        const item = {foodName,category,image,quentity,price,userName,email,orgin,description,orderCount}
         axios.post('/all-food',item)
         .then(data=>{
             console.log(data);

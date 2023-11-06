@@ -31,11 +31,7 @@ const AllFood = () => {
             <AllFoodBanner handleSearch={handleSearch} />
             <div className="grid grid-cols-1 gap-8 mt-28 mb-20 max-w-5xl mx-auto px-5 md:grid-cols-2 lg:grid-cols-3 ">
             {
-                allitem?.filter(item=>{
-                    if(item.foodName.toLowerCase().includes(searchQuery)){
-                        return item
-                    }
-                }).map(item=><FoodCard key={item._id} food={'allfood'} item={item}></FoodCard>)
+                allitem?.map(item=><FoodCard key={item._id} food={'allfood'} item={item}></FoodCard>)
             }
             </div>
         </div>
