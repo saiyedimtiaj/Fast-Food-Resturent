@@ -2,7 +2,7 @@
 
 import { Link } from "react-router-dom";
 
-const FoodCard = ({ item }) => {
+const FoodCard = ({ item,food }) => {
   return (
     <div className="border-2 border-black p-4">
       <img className="w-full h-60 mb-2" src={item?.image} alt="" />
@@ -12,7 +12,7 @@ const FoodCard = ({ item }) => {
         <h1 className="text-2xl font-bold">${item?.price}</h1>
       </div>
       <div className="text-center mt-3">
-        <Link to={`/allfood/${item._id}`}>
+        <Link to={`/${food}/${item._id}`}>
           <button className="text-white bg-black font-medium px-5 py-2 ">
             View Details
           </button>

@@ -35,7 +35,7 @@ const AllFood = () => {
                     if(item.foodName.toLowerCase().includes(searchQuery)){
                         return item
                     }
-                }).map(item=><FoodCard key={item._id} item={item}></FoodCard>)
+                }).map(item=><FoodCard key={item._id} food={'allfood'} item={item}></FoodCard>)
             }
             </div>
         </div>

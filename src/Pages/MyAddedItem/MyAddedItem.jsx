@@ -32,7 +32,7 @@ const MyAddedItem = () => {
       }
       <div className="grid grid-cols-1 gap-8 mt-28 mb-20 max-w-5xl mx-auto px-5 md:grid-cols-2 lg:grid-cols-3 ">
             {
-                item?.map(item=><FoodCard key={item._id} item={item}></FoodCard>)
+                item?.map(item=><FoodCard key={item._id} food={'myaddeditem'} item={item}></FoodCard>)
             }
             </div>
     </>
