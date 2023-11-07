@@ -10,7 +10,7 @@ const TopSell = () => {
     queryKey: ["topsell"],
     queryFn: () =>
       axios
-        .get(`/all-food?sortby=orderCount&sortOrder=desc`)
+        .get(`/all-food?sortby=orderCount&sortOrder=desc&limit=6`)
         .then((res) => res.data),
   });
 
@@ -28,8 +28,7 @@ const TopSell = () => {
         {data
           ?.map((item) => (
             <FoodCard key={item._id} food={"allfood"} item={item}></FoodCard>
-          ))
-          .slice(0, 6)}
+          ))}
       </div>
     </div>
       <div className="mx-auto mb-20 text-center"><Link to='allfood' className="px-9 py-3 text-xl font-medium bg-blue-500 text-white">See All</Link></div>

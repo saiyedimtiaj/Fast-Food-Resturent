@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
 import { toast } from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Update = () => {
     const {user} = useAuth();
@@ -14,14 +15,14 @@ const Update = () => {
         const foodName = form.name.value;
         const category = form.category.value;
         const image = form.image.value;
-        const quentity = parseInt(form.quentity.value);
+        const quantity = parseInt(form.quantity.value);
         const price = parseInt(form.price.value);
         const userName = user?.displayName
         const email = user?.email
         const orgin = form.orgin.value;
         const description = form.description.value;
 
-        const item = {foodName,category,image,quentity,price,userName,email,orgin,description}
+        const item = {foodName,category,image,quantity,price,userName,email,orgin,description}
 
         axios.patch(`/all-food/${food?._id}`,item)
         .then(res=>{
@@ -38,6 +39,9 @@ const Update = () => {
 
   return (
     <>
+    <Helmet>
+                <title>Cafue | Update</title>
+            </Helmet>
       <h1 className="text-4xl font-bold text-center my-7">Update Food </h1>
       <div className="max-w-4xl mx-auto px-5 mb-20">
         <form onSubmit={handleAddItem}>
@@ -87,16 +91,16 @@ const Update = () => {
           </div>
           <div className="flex flex-col md:flex-row items-center gap-3">
             <div className="w-full mt-3">
-              <label htmlFor="food-quentity" className="font-semibold">
-                Food Quentity
+              <label htmlFor="food-quantity" className="font-semibold">
+                Food quantity
               </label>
               <br />
               <input
               required
-              defaultValue={food?.quentity}
+              defaultValue={food?.quantity}
                 type="number"
-                name="quentity"
-                placeholder="Enter Food Quentity Here"
+                name="quantity"
+                placeholder="Enter Food quantity Here"
                 className="px-2 py-3 border-2 border-black w-full"
               />
             </div>

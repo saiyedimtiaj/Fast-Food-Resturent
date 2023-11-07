@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 const SingleFood = () => {
   const product = useLoaderData();
   return (
     <>
+    <Helmet>
+                <title>Cafue | Details</title>
+            </Helmet>
     <div className=" h-[300px] px-5 flex flex-col justify-center" style={{backgroundImage:"url('../assets/image/page-ban-bg.png')",backgroundRepeat:'no-repeat',backgroundSize:'cover',backgroundPosition:'center'}}>
     <h1 className="text-3xl font-bold text-center text-white">Shop Page</h1>
     </div>
@@ -21,7 +25,7 @@ const SingleFood = () => {
         <p className="text-xl font-bold text-red-600 mt-2">
           #{product?.category}
         </p>
-        <p className="my-2 text-lg font-semibold"><span className="text-red-600">Stock</span> : Abailable ${product.quentity} in stock<span></span></p>
+        <p className="my-2 text-lg font-semibold"><span className="text-red-600">Stock</span> : Abailable ${product.quantity} in stock<span></span></p>
         <p className="font-medium text-justify mt-3">{product?.description}</p>
         <div className="flex items-center my-2 gap-10">
         <p className="text-2xl font-bold mt-2 text-blue-600">Made By : {product.orgin}</p>

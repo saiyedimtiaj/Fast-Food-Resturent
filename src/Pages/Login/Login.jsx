@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../Hooks/useAuth";
 import { toast } from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
     const {signin,signinWithGoogle} = useAuth()
@@ -37,6 +38,9 @@ const Login = () => {
 
   return (
     <div className="container mx-auto px-5 my-7 flex items-center justify-center lg:flex-row flex-col gap-8">
+      <Helmet>
+                <title>Cafue | Login</title>
+            </Helmet>
       <div className="">
         <h1 className="text-5xl font-semibold ">
           Hey there! <br /> Welcome back

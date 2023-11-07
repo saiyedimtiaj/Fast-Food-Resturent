@@ -1,9 +1,13 @@
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 const MyAddedDetails = () => {
   const product = useLoaderData();
   return (
     <>
+    <Helmet>
+                <title>Cafue | Details</title>
+            </Helmet>
       <div
         className=" h-[300px] px-5 flex flex-col justify-center"
         style={{
@@ -32,7 +36,7 @@ const MyAddedDetails = () => {
           </p>
           <p className="my-2 text-lg font-semibold">
             <span className="text-red-600">Stock</span> : Abailable $
-            {product.quentity} in stock<span></span>
+            {product.quantity} in stock<span></span>
           </p>
           <p className="font-medium text-justify mt-3">
             {product?.description}

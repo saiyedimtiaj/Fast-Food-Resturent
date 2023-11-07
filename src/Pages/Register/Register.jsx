@@ -5,6 +5,7 @@ import { updateProfile } from "firebase/auth";
 import auth from "../../Config/Firebase.config";
 import { toast } from "react-hot-toast";
 import useAxios from "../../Hooks/useAxios";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
     const {register,signinWithGoogle} = useAuth();
@@ -63,6 +64,9 @@ const Register = () => {
 
   return (
     <div className="container mx-auto px-5 my-7 flex items-center justify-center lg:flex-row flex-col gap-8">
+      <Helmet>
+                <title>Cafue | Register</title>
+            </Helmet>
       <div className="">
         <h1 className="text-5xl font-semibold ">
           Welcome to <br /> Ecommerce

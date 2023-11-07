@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
 
@@ -11,7 +12,7 @@ const AddProduct = () => {
     const foodName = form.name.value;
     const category = form.category.value;
     const image = form.image.value;
-    const quentity = parseInt(form.quentity.value);
+    const quantity = parseInt(form.quantity.value);
     const price = parseInt(form.price.value);
     const userName = user?.displayName;
     const email = user?.email;
@@ -23,7 +24,7 @@ const AddProduct = () => {
       foodName,
       category,
       image,
-      quentity,
+      quantity,
       price,
       userName,
       email,
@@ -43,6 +44,9 @@ const AddProduct = () => {
 
   return (
     <>
+    <Helmet>
+                <title>Cafue | Additem</title>
+            </Helmet>
       <h1 className="text-4xl font-bold text-center my-7">Add a Food Item</h1>
       <div className="max-w-4xl mx-auto px-5 mb-20">
         <form onSubmit={handleAddItem}>
@@ -89,15 +93,15 @@ const AddProduct = () => {
           </div>
           <div className="flex flex-col md:flex-row items-center gap-3">
             <div className="w-full mt-3">
-              <label htmlFor="food-quentity" className="font-semibold">
-                Food Quentity
+              <label htmlFor="food-quantity" className="font-semibold">
+                Food quantity
               </label>
               <br />
               <input
                 required
                 type="number"
-                name="quentity"
-                placeholder="Enter Food Quentity Here"
+                name="quantity"
+                placeholder="Enter Food quantity Here"
                 className="px-2 py-3 border-2 border-black w-full"
               />
             </div>

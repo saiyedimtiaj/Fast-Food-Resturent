@@ -3,6 +3,7 @@ import useAuth from "../../Hooks/useAuth";
 import { toast } from "react-hot-toast";
 import useAxios from "../../Hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet";
 
 const OrderedFood = () => {
   const product = useLoaderData();
@@ -34,6 +35,9 @@ const OrderedFood = () => {
 
     const updateOrder = product.orderCount;
 
+    const productQuentity = product?.quantity;
+    const updateQuentity = productQuentity - quentity;
+
     const exist = data.find((item) => item.foodName === foodName);
 
     if (user.email === product.email) {
@@ -49,7 +53,7 @@ const OrderedFood = () => {
           .then(() => {
             toast.success("Your product is order Now ");
             axios
-              .put(`/all-food/${product?._id}`, { updateOrder })
+              .put(`/all-food/${product?._id}`, { updateOrder,updateQuentity })
               .then((res) => {
                 console.log(res.data);
               })
@@ -68,6 +72,9 @@ const OrderedFood = () => {
   };
   return (
     <>
+    <Helmet>
+                <title>Cafue | Order</title>
+            </Helmet>
       <h1 className="text-5xl font-semibold text-center mt-16">Order Now!</h1>
       <div className="mb-16 mx-auto p-5 max-w-4xl">
         <form onSubmit={handleOrder}>
