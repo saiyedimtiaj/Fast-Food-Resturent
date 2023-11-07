@@ -1,34 +1,45 @@
 import useAuth from "../../Hooks/useAuth";
-import useAxios from "../../Hooks/useAxios"
+import useAxios from "../../Hooks/useAxios";
 
 const AddProduct = () => {
-    const {user} = useAuth();
-    const axios = useAxios()
+  const { user } = useAuth();
+  const axios = useAxios();
 
-    const handleAddItem = async (event) => {
-        event.preventDefault()
-        const form = event.target;
-        const foodName = form.name.value;
-        const category = form.category.value;
-        const image = form.image.value;
-        const quentity = form.quentity.value;
-        const price = form.price.value;
-        const userName = user?.displayName
-        const email = user?.email
-        const orgin = form.orgin.value;
-        const description = form.description.value;
-        const orderCount = 1
+  const handleAddItem = async (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const foodName = form.name.value;
+    const category = form.category.value;
+    const image = form.image.value;
+    const quentity = parseInt(form.quentity.value);
+    const price = parseInt(form.price.value);
+    const userName = user?.displayName;
+    const email = user?.email;
+    const orgin = form.orgin.value;
+    const description = form.description.value;
+    const orderCount = 1;
 
-        const item = {foodName,category,image,quentity,price,userName,email,orgin,description,orderCount}
-        axios.post('/all-food',item)
-        .then(data=>{
-            console.log(data);
-        })
-        .catch(err=>{
-            console.log(err.message);
-        })
-        
-    }
+    const item = {
+      foodName,
+      category,
+      image,
+      quentity,
+      price,
+      userName,
+      email,
+      orgin,
+      description,
+      orderCount,
+    };
+    axios
+      .post("/all-food", item)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
   return (
     <>
@@ -42,7 +53,7 @@ const AddProduct = () => {
               </label>
               <br />
               <input
-              required
+                required
                 type="text"
                 name="name"
                 placeholder="Enter Food Name Here"
@@ -55,7 +66,7 @@ const AddProduct = () => {
               </label>
               <br />
               <input
-              required
+                required
                 type="text"
                 name="category"
                 placeholder="Enter Food Category Here"
@@ -64,17 +75,17 @@ const AddProduct = () => {
             </div>
           </div>
           <div className="mt-3">
-          <label htmlFor="food-image" className="font-semibold">
-                Food Image
-              </label>
-              <br />
-              <input
+            <label htmlFor="food-image" className="font-semibold">
+              Food Image
+            </label>
+            <br />
+            <input
               required
-                type="url"
-                name="image"
-                placeholder="Enter Image Here..."
-                className="px-2 py-3 border-2 border-black w-full"
-              />
+              type="url"
+              name="image"
+              placeholder="Enter Image Here..."
+              className="px-2 py-3 border-2 border-black w-full"
+            />
           </div>
           <div className="flex flex-col md:flex-row items-center gap-3">
             <div className="w-full mt-3">
@@ -83,7 +94,7 @@ const AddProduct = () => {
               </label>
               <br />
               <input
-              required
+                required
                 type="number"
                 name="quentity"
                 placeholder="Enter Food Quentity Here"
@@ -96,7 +107,7 @@ const AddProduct = () => {
               </label>
               <br />
               <input
-              required
+                required
                 type="number"
                 name="price"
                 placeholder="Enter Food Category Here"
@@ -106,12 +117,22 @@ const AddProduct = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             <div className="mt-3 flex-1">
-                <span className="font-medium">User Name</span>
-                <h1 className="text-2xl font-semibold w-full bg-[#fce9c3] py-2 px-3 uppercase">{user?.displayName}</h1>
+              <span className="font-medium">User Name</span>
+              <input
+                type="text"
+                className="px-2 py-3 border-2 border-black w-full"
+                readOnly
+                defaultValue={user?.displayName}
+              />
             </div>
             <div className="mt-3 flex-1">
-                <span className="font-medium">User Email</span>
-                <h1 className="text-2xl font-semibold w-full bg-[#fce9c3] py-2 px-3">{user?.email}</h1>
+              <span className="font-medium">User Email</span>
+              <input
+                type="text"
+                className="px-2 py-3 border-2 border-black w-full"
+                readOnly
+                defaultValue={user?.email}
+              />
             </div>
             <div className="w-full mt-3">
               <label htmlFor="food-Price" className="font-semibold">
@@ -119,7 +140,7 @@ const AddProduct = () => {
               </label>
               <br />
               <input
-              required
+                required
                 type="text"
                 name="orgin"
                 placeholder="Enter Orgin"
@@ -128,11 +149,21 @@ const AddProduct = () => {
             </div>
           </div>
           <div className="w-full mt-3">
-            <label htmlFor="description" className="font-medium">Food Description</label><br />
-            <textarea name="description" rows="6" className="px-2 py-3 border-2 border-black w-full"></textarea>
+            <label htmlFor="description" className="font-medium">
+              Food Description
+            </label>
+            <br />
+            <textarea
+              name="description"
+              rows="6"
+              className="px-2 py-3 border-2 border-black w-full"
+            ></textarea>
           </div>
           <input
-           type="submit" value='Add Food' className="text-center cursor-pointer mt-5 mb-7 bg-blue-500 text-white py-3 w-full rounded font-medium hover:bg-blue-700" />
+            type="submit"
+            value="Add Food"
+            className="text-center cursor-pointer mt-5 mb-7 bg-blue-500 text-white py-3 w-full rounded font-medium hover:bg-blue-700"
+          />
         </form>
       </div>
     </>

@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { FiLogIn } from "react-icons/fi";
 import useAuth from "../../Hooks/useAuth";
+import Framer from "../Framer/Framer";
 
 const Navbar = () => {
   const { logOut,user } = useAuth();
@@ -15,6 +16,7 @@ const Navbar = () => {
 
   const links = (
     <>
+      <Framer>
       <NavLink
         to="/"
         className={({ isActive, isPending }) =>
@@ -23,22 +25,29 @@ const Navbar = () => {
       >
         Home
       </NavLink>
+      </Framer>
+      <Framer>
       <NavLink
         to="/allfood"
         className={({ isActive, isPending }) =>
-          isPending ? "" : isActive ? "" : ""
-        }
+        isPending ? "" : isActive ? "" : ""
+      }
       >
         All Food Items
       </NavLink>
+
+      </Framer>
+      <Framer>
+
       <NavLink
         to="/blog"
         className={({ isActive, isPending }) =>
-          isPending ? "" : isActive ? "" : ""
-        }
+        isPending ? "" : isActive ? "" : ""
+      }
       >
         Blog
       </NavLink>
+        </Framer>
     </>
   );
   return (
@@ -68,7 +77,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <img src="https://cafeu-html.codebasket.net/cafeu-html/assets/img/logo/logo-3.png" alt="" />
+        <Framer><img src="https://cafeu-html.codebasket.net/cafeu-html/assets/img/logo/logo-3.png" alt="" /></Framer>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-3 text-lg font-semibold">
@@ -76,6 +85,7 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+       <Framer>
        {
         !user ?  <Link
         to="/login"
@@ -87,6 +97,7 @@ const Navbar = () => {
         </p>
       </Link> : <button onClick={handleLogout} className="bg-blue-600 flex items-center gap-1 px-5 py-2 rounded font-medium text-white">Log Out</button>
        }
+       </Framer>
         {
           user && <div className="dropdown dropdown-end ml-2">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

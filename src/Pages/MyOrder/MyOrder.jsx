@@ -13,14 +13,14 @@ const MyOrder = () => {
     data,
     refetch,
   } = useQuery({
-    queryKey: ["myOrderItems"],
+    queryKey: ["myOrderItemsuhfrde"],
     queryFn: () =>
-      axios
-        .get(`http://localhost:5000/order?email=${user?.email}`)
-        .then((res) => res.data),
+      axios(`/order?email=${user?.email}`,{credentials:'include'})
+        .then((res) => res.data)
   });
 
   if (isPending) return "Loading...";
+  
 
   if (error) return "An error has occurred: " + error.message;
   console.log(data);

@@ -1,0 +1,63 @@
+[
+    {
+      "foodName": "Margherita Pizza",
+      "category": "Pizza",
+      "image": "https://img.freepik.com/premium-photo/italian-pizza-margarita-black-background-top-view-free-space-text_275899-410.jpg",
+      "userName":"imtiaj",
+      "email":"imtiaj@gmail.com",
+      "quantity": 120,
+      "price": 10.99,
+      "origin": "Italy",
+      "orderCount": 68,
+      "description": "A classic Italian pizza with a thin crust, tomato sauce, fresh mozzarella cheese, basil, and a drizzle of olive oil. Simple and delicious."
+    },
+    {
+      "foodName": "Caesar Salad",
+      "category": "Salads",
+      "image": "https://img.freepik.com/free-photo/fresh-vegetable-salad-table_140725-340.jpg?t=st=1699284902~exp=1699285502~hmac=4aed7be23bab275fb285c17758e443cdcfdf664a34dec7c28027505ed690cf1f",
+      "userName":"imtiaj",
+      "email":"imtiaj@gmail.com",
+      "quantity": 90,
+      "price": 7.99,
+      "origin": "United States",
+      "orderCount": 52,
+      "description": "A crisp and refreshing salad with romaine lettuce, croutons, Parmesan cheese, and Caesar dressing. A timeless favorite."
+    },
+    {
+      "foodName": "Beef Tacos",
+      "category": "Tacos",
+      "image": "https://img.freepik.com/free-photo/fresh-beef-taco-wooden-table-with-sauce-generative-ai_188544-8042.jpg?t=st=1699284939~exp=1699285539~hmac=043cf626f45267a5f221d36cb29decbc5a4efeb3c6d9d4117557edc692435b1c",
+      "userName":"imtiaj",
+      "email":"imtiaj@gmail.com",
+      "quantity": 80,
+      "price": 9.49,
+      "origin": "Mexico",
+      "orderCount": 45,
+      "description": "Tender beef, seasoned with spices, served in soft corn tortillas, and topped with salsa, onions, and cilantro. A Mexican delight."
+    },
+    {
+      "foodName": "Chicken Tikka Masala",
+      "category": "Indian",
+      "image": "https://img.freepik.com/free-photo/curry-with-chicken-onions-indian-food-asian-cuisine_2829-4415.jpg?t=st=1699284972~exp=1699285572~hmac=4f70b98d35406e670615af0bc50f4458b14b15ca6c7a7a0ce660e915c48b949c",
+      "userName":"imtiaj",
+      "email":"imtiaj@gmail.com",
+      "quantity": 110,
+      "price": 13.99,
+      "origin": "India",
+      "orderCount": 63,
+      "description": "A popular Indian dish with grilled chicken in a creamy tomato sauce, seasoned with a blend of aromatic spices. A flavorful journey."
+    },
+    {
+      "foodName": "Chocolate Fondue",
+      "category": "Desserts",
+      "image": "https://img.freepik.com/free-photo/high-angle-pastry-chef-preparing-chocolate-cake_23-2148696196.jpg?w=900&t=st=1699285026~exp=1699285626~hmac=db8df07d30d234b4753afe028f8497be9faf1913a8709517f94ae46c6f0c3b6c",
+      "userName":"imtiaj",
+      "email":"imtiaj@gmail.com",
+      "quantity": 40,
+      "price": 15.99,
+      "origin": "Switzerland",
+      "orderCount": 28,
+      "description": "Indulge in a sweet dessert experience with a pot of melted chocolate for dipping fruits, marshmallows, and more. Perfect for sharing."
+    }
+  ]
+  

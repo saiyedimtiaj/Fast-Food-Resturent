@@ -3,11 +3,25 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from '../../Hooks/useAuth'
 import { updateProfile } from "firebase/auth";
 import auth from "../../Config/Firebase.config";
+import { toast } from "react-hot-toast";
+import useAxios from "../../Hooks/useAxios";
 
 const Register = () => {
-    const {register} = useAuth();
+    const {register,signinWithGoogle} = useAuth();
     const navegate = useNavigate()
     const location = useLocation()
+    const axios = useAxios()
+
+    const handleGoogle = () => {
+      signinWithGoogle()
+      .then(()=>{
+        navegate(location.state ? location.state : '/');
+        toast.success('log in sucessfully')
+      })
+      .catch(err=>{
+        toast.error(err.message)
+      })
+    }
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -17,17 +31,33 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
 
+
+    if(!/[A-Z]/.test(password)){
+      return toast.error('Password Must a Uppercase')
+    }
+    if(!/[.!@#$%^&*()_+-=]/.test(password)){
+      return toast.error('Password Must a  special Character')
+    }
+    if(!/[0-9]/.test(password)){
+      return toast.error('Password Must a Number')
+    }
+
     register(email,password)
-    .then(()=>{
+    .then((res)=>{
         updateProfile(auth.currentUser,{
           displayName: name,
           photoURL:image
         }).then(()=>{
           navegate(location.state ? location.state : '/');
         })
+        toast.success('Sign Up Account Successfully')
+        const createdAt = res?.data?.createdAt
+        axios.post('/user',{name,email,createdAt})
+        .then()
+        .catch()
     })
     .catch(err=>{
-        console.log(err.message);
+      toast.error(err.message);
     })
   };
 
@@ -104,7 +134,7 @@ const Register = () => {
           />
         </form>
         <p className="my-2 text-center font-medium">or</p>
-        <button className="w-full flex items-center justify-center gap-2 py-2 rounded border-black border font-medium cursor-pointer text-lg">
+        <button onClick={handleGoogle} className="w-full flex items-center justify-center gap-2 py-2 rounded border-black border font-medium cursor-pointer text-lg">
           <p className="text-xl">
             <FcGoogle />
           </p>

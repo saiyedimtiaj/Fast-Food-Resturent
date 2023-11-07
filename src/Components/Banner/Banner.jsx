@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper/modules";
+import Framer from "../Framer/Framer";
 
 const Banner = () => {
   return (
@@ -23,13 +24,17 @@ const Banner = () => {
         <SwiperSlide>
           <div className="flex flex-col-reverse items-center container mx-auto pt-8 justify-between gap-10 lg:flex-row min-h-[calc(100vh-90px)] px-5">
             <div className="flex-1">
-              <h1 className="text-5xl font-bold mb-5">
+             <Framer>
+             <h1 className="text-5xl font-bold mb-5">
                 The Best Food Monger in Your city Area
               </h1>
-              <p className="text-gray-500 mt-4">
+             </Framer>
+             <Framer>
+             <p className="text-gray-500 mt-4">
               Unlock culinary excellence with our restaurant management website. Seamlessly manage reservations, streamline operations, and elevate your dining experience.
                 .
               </p>
+             </Framer>
             </div>
             <div className="flex-1">
               <img
@@ -42,13 +47,19 @@ const Banner = () => {
         <SwiperSlide>
           <div className="flex flex-col-reverse items-center container mx-auto pt-8 justify-between gap-10 lg:flex-row min-h-[calc(100vh-90px)] px-5">
             <div className="flex-1">
+            <Framer>
+
               <h1 className="text-5xl font-bold mb-5">
                 Assian Lettuce Erap Chopped Salad Recipe
               </h1>
+            </Framer>
+            <Framer>
+
               <p className="text-gray-500 mt-4">
               Enhance your restaurants performance with our management website. Effortlessly handle reservations, streamline operations, and create unforgettable dining moments.
                 .
               </p>
+            </Framer>
             </div>
             <div className="flex-1">
               <img
@@ -61,13 +72,19 @@ const Banner = () => {
         <SwiperSlide>
           <div className="flex flex-col-reverse items-center container mx-auto pt-8 justify-between gap-10 lg:flex-row min-h-[calc(100vh-90px)] px-5">
             <div className="flex-1">
+            <Framer>
+
               <h1 className="text-5xl font-bold mb-5 leading-tight">
                 Defferent Spice For a Defferent Test
               </h1>
+            </Framer>
+            <Framer>
+
               <p className="text-gray-500 mt-4">
               Experience culinary perfection with our restaurant management website. Elevate your service, manage reservations, and streamline operations for dining at its finest.
                 .
               </p>
+            </Framer>
             </div>
             <div className="flex-1">
               <img

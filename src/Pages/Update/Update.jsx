@@ -14,8 +14,8 @@ const Update = () => {
         const foodName = form.name.value;
         const category = form.category.value;
         const image = form.image.value;
-        const quentity = form.quentity.value;
-        const price = form.price.value;
+        const quentity = parseInt(form.quentity.value);
+        const price = parseInt(form.price.value);
         const userName = user?.displayName
         const email = user?.email
         const orgin = form.orgin.value;

@@ -12,8 +12,8 @@ const OrderedFood = () => {
   const { isPending, error, data, refetch } = useQuery({
     queryKey: ["myorderAlldata"],
     queryFn: () =>
-      fetch(`http://localhost:5000/order?email=${user?.email}`).then((res) =>
-        res.json()
+      axios.get(`/order?email=${user?.email}`).then((res) =>
+        res.data
       ),
   });
 
