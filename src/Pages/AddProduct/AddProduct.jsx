@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
 
@@ -16,7 +16,7 @@ const AddProduct = () => {
     const price = parseInt(form.price.value);
     const userName = user?.displayName;
     const email = user?.email;
-    const orgin = form.orgin.value;
+    const origin = form.origin.value;
     const description = form.description.value;
     const orderCount = 1;
 
@@ -28,7 +28,7 @@ const AddProduct = () => {
       price,
       userName,
       email,
-      orgin,
+      origin,
       description,
       orderCount,
     };
@@ -45,8 +45,8 @@ const AddProduct = () => {
   return (
     <>
     <Helmet>
-                <title>Cafue | Additem</title>
-            </Helmet>
+      <title>Cafue | Add Product</title>
+    </Helmet>
       <h1 className="text-4xl font-bold text-center my-7">Add a Food Item</h1>
       <div className="max-w-4xl mx-auto px-5 mb-20">
         <form onSubmit={handleAddItem}>
@@ -140,14 +140,14 @@ const AddProduct = () => {
             </div>
             <div className="w-full mt-3">
               <label htmlFor="food-Price" className="font-semibold">
-                Orgin
+                origin
               </label>
               <br />
               <input
                 required
                 type="text"
-                name="orgin"
-                placeholder="Enter Orgin"
+                name="origin"
+                placeholder="Enter origin"
                 className="px-2 py-3 border-2 border-black w-full"
               />
             </div>

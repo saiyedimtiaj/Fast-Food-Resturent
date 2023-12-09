@@ -2,8 +2,8 @@ import AllFoodBanner from "../../Components/AllFoodBanner/AllFoodBanner";
 import FoodCard from "../../Components/FoodCard/FoodCard";
 import { useEffect, useState } from "react";
 import Scalition from "../../Components/Scalition/Scalition";
-import { Helmet } from "react-helmet";
 import useAxios from "../../Hooks/useAxios";
+import { Helmet } from "react-helmet-async";
 
 const AllFood = () => {
   const [searchQuery, setSearchQuery] = useState([]);
@@ -60,9 +60,10 @@ const AllFood = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Cafue | Allfood</title>
-      </Helmet><div>
+    <Helmet>
+      <title>Cafue | All Food</title>
+    </Helmet>
+    <div>
       <AllFoodBanner handleSearch={handleSearch} />
       <div className="grid grid-cols-1 gap-8 mt-20 mb-6 container mx-auto px-5 md:grid-cols-2 lg:grid-cols-3 ">
         {allitem

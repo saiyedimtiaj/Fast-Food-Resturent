@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 const MyAddedDetails = () => {
@@ -6,8 +6,8 @@ const MyAddedDetails = () => {
   return (
     <>
     <Helmet>
-                <title>Cafue | Details</title>
-            </Helmet>
+      <title>Cafue | My Details</title>
+    </Helmet>
       <div
         className=" h-[300px] px-5 flex flex-col justify-center"
         style={{
@@ -43,7 +43,7 @@ const MyAddedDetails = () => {
           </p>
           <div className="flex items-center my-2 gap-10">
             <p className="text-2xl font-bold mt-2 text-blue-600">
-              Made By : {product.orgin}
+              Made By : {product.origin}
             </p>
             <h1 className="text-2xl font-bold mt-3">
               Price : ${product?.price}

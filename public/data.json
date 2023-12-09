@@ -1,63 +1,62 @@
 [
-    {
-      "foodName": "Margherita Pizza",
-      "category": "Pizza",
-      "image": "https://img.freepik.com/premium-photo/italian-pizza-margarita-black-background-top-view-free-space-text_275899-410.jpg",
-      "userName":"imtiaj",
-      "email":"imtiaj@gmail.com",
-      "quantity": 120,
-      "price": 10.99,
-      "origin": "Italy",
-      "orderCount": 68,
-      "description": "A classic Italian pizza with a thin crust, tomato sauce, fresh mozzarella cheese, basil, and a drizzle of olive oil. Simple and delicious."
-    },
-    {
-      "foodName": "Caesar Salad",
-      "category": "Salads",
-      "image": "https://img.freepik.com/free-photo/fresh-vegetable-salad-table_140725-340.jpg?t=st=1699284902~exp=1699285502~hmac=4aed7be23bab275fb285c17758e443cdcfdf664a34dec7c28027505ed690cf1f",
-      "userName":"imtiaj",
-      "email":"imtiaj@gmail.com",
-      "quantity": 90,
-      "price": 7.99,
-      "origin": "United States",
-      "orderCount": 52,
-      "description": "A crisp and refreshing salad with romaine lettuce, croutons, Parmesan cheese, and Caesar dressing. A timeless favorite."
-    },
-    {
-      "foodName": "Beef Tacos",
-      "category": "Tacos",
-      "image": "https://img.freepik.com/free-photo/fresh-beef-taco-wooden-table-with-sauce-generative-ai_188544-8042.jpg?t=st=1699284939~exp=1699285539~hmac=043cf626f45267a5f221d36cb29decbc5a4efeb3c6d9d4117557edc692435b1c",
-      "userName":"imtiaj",
-      "email":"imtiaj@gmail.com",
-      "quantity": 80,
-      "price": 9.49,
-      "origin": "Mexico",
-      "orderCount": 45,
-      "description": "Tender beef, seasoned with spices, served in soft corn tortillas, and topped with salsa, onions, and cilantro. A Mexican delight."
-    },
-    {
-      "foodName": "Chicken Tikka Masala",
-      "category": "Indian",
-      "image": "https://img.freepik.com/free-photo/curry-with-chicken-onions-indian-food-asian-cuisine_2829-4415.jpg?t=st=1699284972~exp=1699285572~hmac=4f70b98d35406e670615af0bc50f4458b14b15ca6c7a7a0ce660e915c48b949c",
-      "userName":"imtiaj",
-      "email":"imtiaj@gmail.com",
-      "quantity": 110,
-      "price": 13.99,
-      "origin": "India",
-      "orderCount": 63,
-      "description": "A popular Indian dish with grilled chicken in a creamy tomato sauce, seasoned with a blend of aromatic spices. A flavorful journey."
-    },
-    {
-      "foodName": "Chocolate Fondue",
-      "category": "Desserts",
-      "image": "https://img.freepik.com/free-photo/high-angle-pastry-chef-preparing-chocolate-cake_23-2148696196.jpg?w=900&t=st=1699285026~exp=1699285626~hmac=db8df07d30d234b4753afe028f8497be9faf1913a8709517f94ae46c6f0c3b6c",
-      "userName":"imtiaj",
-      "email":"imtiaj@gmail.com",
-      "quantity": 40,
-      "price": 15.99,
-      "origin": "Switzerland",
-      "orderCount": 28,
-      "description": "Indulge in a sweet dessert experience with a pot of melted chocolate for dipping fruits, marshmallows, and more. Perfect for sharing."
-    }
-  ]
-  
+  {
+    "foodName": "Sushi Burrito",
+    "category": "Sushi",
+    "image": "https://img.freepik.com/free-photo/vegan-rice-paper-rolls-with-vegetables-sesam-served-plate-ready-eat_1220-7019.jpg?w=900&t=st=1699373031~exp=1699373631~hmac=0b1dbc9bc778d21fbfda315ef67f74c3c418b002a3ebc7ca48315ea592092b05",
+    "quantity": 55,
+    "userName":"Rakib",
+    "email":"rakib@gmail.com",
+    "price": 11.99,
+    "origin": "Japan",
+    "orderCount": 24,
+    "description": "A fusion of sushi and burrito, featuring fresh fish, rice, vegetables, and various fillings wrapped in seaweed. A trendy and delicious choice."
+  },
+  {
+    "foodName": "Eggplant Parmesan",
+    "category": "Italian",
+    "image": "https://img.freepik.com/free-photo/delicious-pasta-tray_23-2150690761.jpg?t=st=1699373066~exp=1699376666~hmac=0c8f11a394febf9b1efde6c0e6c574cdab0d4a0844c7b59a77dd5c9dacd02a30&w=826",
+    "quantity": 70,
+    "userName":"Rakib",
+    "email":"rakib@gmail.com",
+    "price": 10.49,
+    "origin": "Italy",
+    "orderCount": 38,
+    "description": "Slices of breaded and fried eggplant, layered with marinara sauce and melted mozzarella cheese. A comforting Italian classic."
+  },
+  {
+    "foodName": "Pad Thai",
+    "category": "Thai",
+    "image": "https://img.freepik.com/free-photo/high-angle-traditional-asian-meal-with-chopsticks_23-2148694371.jpg?t=st=1699373109~exp=1699373709~hmac=ff2999e1405cb386b3134974d79ee707caedebafd71638446cba2ebf04a5e883",
+    "quantity": 80,
+    "userName":"Rakib",
+    "email":"rakib@gmail.com",
+    "price": 9.99,
+    "origin": "Thailand",
+    "orderCount": 52,
+    "description": "A popular Thai stir-fried noodle dish with shrimp, tofu, peanuts, and tamarind sauce. A harmonious blend of sweet, sour, and savory flavors."
+  },
+  {
+    "foodName": "Falafel Wrap",
+    "category": "Middle Eastern",
+    "image": "https://img.freepik.com/free-photo/fresh-gourmet-meat-meal-with-healthy-vegetables-generative-ai_188544-8096.jpg?t=st=1699373148~exp=1699373748~hmac=c0ec630c443cf4119ce25f09c48e508f8b177ca20ac9793eb5e9e1e74f2445da",
+    "quantity": 65,
+    "userName":"Rakib",
+    "email":"rakib@gmail.com",
+    "price": 7.99,
+    "origin": "Middle East",
+    "orderCount": 46,
+    "description": "A flavorful wrap filled with crispy falafel, fresh veggies, and tahini sauce, wrapped in warm pita bread. A Middle Eastern delight."
+  },
+  {
+    "foodName": "Key Lime Pie",
+    "category": "Desserts",
+    "image": "key-lime-pie.jpg",
+    "quantity": 45,
+    "userName":"Rakib",
+    "email":"rakib@gmail.com",
+    "price": 6.99,
+    "origin": "United States",
+    "orderCount": 33,
+    "description": "A tangy and refreshing dessert pie with a graham cracker crust and a smooth filling made from Key limes. A perfect sweet ending to your meal."
+  }
+]

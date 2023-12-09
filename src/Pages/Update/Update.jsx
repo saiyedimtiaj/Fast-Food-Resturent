@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useAxios from "../../Hooks/useAxios";
 import { toast } from "react-hot-toast";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const Update = () => {
     const {user} = useAuth();
@@ -19,10 +19,10 @@ const Update = () => {
         const price = parseInt(form.price.value);
         const userName = user?.displayName
         const email = user?.email
-        const orgin = form.orgin.value;
+        const origin = form.origin.value;
         const description = form.description.value;
 
-        const item = {foodName,category,image,quantity,price,userName,email,orgin,description}
+        const item = {foodName,category,image,quantity,price,userName,email,origin,description}
 
         axios.patch(`/all-food/${food?._id}`,item)
         .then(res=>{
@@ -40,8 +40,8 @@ const Update = () => {
   return (
     <>
     <Helmet>
-                <title>Cafue | Update</title>
-            </Helmet>
+      <title>Cafue | Update</title>
+    </Helmet>
       <h1 className="text-4xl font-bold text-center my-7">Update Food </h1>
       <div className="max-w-4xl mx-auto px-5 mb-20">
         <form onSubmit={handleAddItem}>
@@ -130,15 +130,15 @@ const Update = () => {
             </div>
             <div className="w-full mt-3">
               <label htmlFor="food-Price" className="font-semibold">
-                Orgin
+                origin
               </label>
               <br />
               <input
               required
                 type="text"
-                defaultValue={food?.orgin}
-                name="orgin"
-                placeholder="Enter Orgin"
+                defaultValue={food?.origin}
+                name="origin"
+                placeholder="Enter origin"
                 className="px-2 py-3 border-2 border-black w-full"
               />
             </div>
@@ -148,7 +148,7 @@ const Update = () => {
             <textarea name="description" defaultValue={food?.description} rows="6" className="px-2 py-3 border-2 border-black w-full"></textarea>
           </div>
           <input
-           type="submit" value='Add Food' className="text-center cursor-pointer mt-5 mb-7 bg-blue-500 text-white py-3 w-full rounded font-medium hover:bg-blue-700" />
+           type="submit" value='Update Food' className="text-center cursor-pointer mt-5 mb-7 bg-blue-500 text-white py-3 w-full rounded font-medium hover:bg-blue-700" />
         </form>
       </div>
     </>

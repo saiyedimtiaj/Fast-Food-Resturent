@@ -1,4 +1,4 @@
-
+Technology : Framer Motion,Express JS,MongoDB,React
 
 1.in this project i am use framer motion when a user scrole in home page user will see a smooth transition effect.
 

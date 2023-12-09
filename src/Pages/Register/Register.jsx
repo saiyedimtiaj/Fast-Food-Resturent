@@ -5,24 +5,24 @@ import { updateProfile } from "firebase/auth";
 import auth from "../../Config/Firebase.config";
 import { toast } from "react-hot-toast";
 import useAxios from "../../Hooks/useAxios";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
-    const {register,signinWithGoogle} = useAuth();
+    const {register,google} = useAuth();
     const navegate = useNavigate()
     const location = useLocation()
     const axios = useAxios()
 
     const handleGoogle = () => {
-      signinWithGoogle()
-      .then(()=>{
-        navegate(location.state ? location.state : '/');
-        toast.success('log in sucessfully')
-      })
-      .catch(err=>{
-        toast.error(err.message)
-      })
-    }
+      google()
+        .then(() => {
+          navegate(location.state ? location.state : '/');
+          return toast.success('login Successfully ')
+        })
+        .catch((err) => {
+          return toast.error(err.message);
+        });
+    };
 
   const handleRegister = (event) => {
     event.preventDefault();

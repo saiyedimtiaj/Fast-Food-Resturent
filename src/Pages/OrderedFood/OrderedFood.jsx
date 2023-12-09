@@ -3,7 +3,7 @@ import useAuth from "../../Hooks/useAuth";
 import { toast } from "react-hot-toast";
 import useAxios from "../../Hooks/useAxios";
 import { useQuery } from "@tanstack/react-query";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const OrderedFood = () => {
   const product = useLoaderData();
@@ -31,7 +31,8 @@ const OrderedFood = () => {
     const userName = user?.userName;
     const email = user?.email;
     const image = product?.image;
-    const orderItem = { foodName, quentity, price, userName, email, image };
+    const date = event.target.date.value
+    const orderItem = { foodName, quentity, price, userName, email, image, date };
 
     const updateOrder = product.orderCount;
 
@@ -120,6 +121,12 @@ const OrderedFood = () => {
                 className="px-2 py-3 border-2 border-black w-full"
               />
             </div>
+              <div className="mt-3 w-full">
+              <label htmlFor="food-Price" className="font-semibold">
+                Order Date
+              </label>
+                <input type="date" name="date" required className="px-2 py-3 border-2 border-black w-full" />
+              </div>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-3">
             <div className="w-full mt-3">

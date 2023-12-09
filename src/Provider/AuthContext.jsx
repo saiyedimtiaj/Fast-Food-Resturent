@@ -7,19 +7,19 @@ import useAxios from "../Hooks/useAxios";
 export const AuthProvider = createContext([])
 
 const AuthContext = ({children}) => {
-    const [user,setUser] = useState([])
+    const [user,setUser] = useState(null)
     const [loading,setLoading] = useState(true);
     const axios = useAxios()
-    const googleProvider = new GoogleAuthProvider
+    const provider = new GoogleAuthProvider
 
     const register = (email,password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth,email,password)
     }
 
-    const signinWithGoogle = () => {
-        setLoading(true)
-        return signInWithPopup(auth,googleProvider)
+    const google = () => {
+        setLoading(true);
+        return signInWithPopup(auth,provider)
     }
 
     const signin = (email,password) => {
@@ -32,34 +32,13 @@ const AuthContext = ({children}) => {
     }
 
     useEffect(()=>{
-        const subScribe = () => {
+        const unSubscrive = () => {
             onAuthStateChanged(auth,currentUser=>{
-                setUser(currentUser)
                 setLoading(false)
-                const email = currentUser?.email
-                if(currentUser?.email){
-                    axios.post('/jwt',{email},{withCredentials:true})
-                .then(res=>{
-                    console.log(res.data);
-                })
-                .catch(err=>{
-                    console.log(err.message);
-                })
-                }
-                else{
-                    axios.post('/logout',{withCredentials:true})
-                    .then(res=>{
-                        console.log(res.data);
-                    })
-                    .catch(err=>{
-                        console.log(err.message);
-                    })
-                }
+                setUser(currentUser)
             })
         }
-        return ()=>{
-            subScribe()
-        }
+        return ()=> unSubscrive()
     },[axios])
 
     console.log(user);
@@ -70,7 +49,7 @@ const AuthContext = ({children}) => {
         register,
         signin,
         logOut,
-        signinWithGoogle
+        google
     }
     return (
         <AuthProvider.Provider value={userInfo}>

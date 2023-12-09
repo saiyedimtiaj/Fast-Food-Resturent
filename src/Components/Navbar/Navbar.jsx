@@ -2,13 +2,16 @@ import { Link, NavLink } from "react-router-dom";
 import { FiLogIn } from "react-icons/fi";
 import useAuth from "../../Hooks/useAuth";
 import Framer from "../Framer/Framer";
+import { toast } from "react-hot-toast";
 
 const Navbar = () => {
   const { logOut,user } = useAuth();
 
   const handleLogout = () => {
     logOut()
-      .then()
+      .then(()=>{
+        toast.success('log out sucessfully')
+      })
       .catch((err) => {
         console.log(err.message);
       });
@@ -85,28 +88,15 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-       <Framer>
        {
-        !user ?  <Link
-        to="/login"
-        className="bg-blue-600 flex items-center gap-1 px-5 py-2 rounded font-medium text-white"
-      >
-        <p>Sign In</p>{" "}
-        <p className="text-xl font-bold">
-          <FiLogIn />
-        </p>
-      </Link> : <button onClick={handleLogout} className="bg-blue-600 flex items-center gap-1 px-5 py-2 rounded font-medium text-white">Log Out</button>
-       }
-       </Framer>
-        {
-          user && <div className="dropdown dropdown-end ml-2">
-          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
-              <img src={user.photoURL}/>
-            </div>
-          </label>
-          <ul tabIndex={0} className="mt-3 z-50 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
-            <li>
+        user ?  <div className="dropdown dropdown-end">
+        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+          <div className="w-10 rounded-full">
+            <img src={user?.photoURL} />
+          </div>
+        </label>
+        <ul tabIndex={0} className="mt-3 z-50 p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+          <li>
               <p className="justify-between bg-slate-300 uppercase font-bold">
                 {user.displayName}
               </p>
@@ -114,9 +104,10 @@ const Navbar = () => {
             <li><Link to='/myaddeditem'>My added item</Link></li>
             <li><Link to='/add-item'>Add a item</Link></li>
             <li><Link to='/myorder'>My ordered item</Link></li>
-          </ul>
-        </div>
-        }
+          <button  className="bg-blue-600 cursor-pointer text-white py-2 w-full mt-1" onClick={handleLogout}>Log Out</button>
+        </ul>
+      </div> : <div className="flex gap-2"> <Link to='login'><button className="btn btn-secondary">Login</button></Link></div>
+       }
       </div>
     </div>
   );

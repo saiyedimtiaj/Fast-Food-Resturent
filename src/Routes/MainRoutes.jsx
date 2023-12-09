@@ -40,7 +40,7 @@ const MainRoutes = createBrowserRouter([
             {
                 path:'/allfood/:id',
                 element:<SingleFood/>,
-                loader:({params})=>fetch(`http://localhost:5000/all-food/${params.id}`)
+                loader:({params})=>fetch(`https://assingment-11-server-three.vercel.app/all-food/${params.id}`)
             },
             {
                 path:'/blog',
@@ -53,7 +53,7 @@ const MainRoutes = createBrowserRouter([
             {
                 path:'/allfood/:id/order',
                 element:<PrivateRoute><OrderedFood/></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/all-food/${params.id}`)
+                loader:({params})=>fetch(`https://assingment-11-server-three.vercel.app/all-food/${params.id}`)
             },
             {
                 path:'/myaddeditem',
@@ -62,12 +62,12 @@ const MainRoutes = createBrowserRouter([
             {
                 path:'/myaddeditem/:id',
                 element:<PrivateRoute><MyAddedDetails/></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/all-food/${params.id}`)
+                loader:({params})=>fetch(`https://assingment-11-server-three.vercel.app/all-food/${params.id}`)
             },
             {
                 path:'/myaddeditem/:id/update',
                 element:<PrivateRoute><Update/></PrivateRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/all-food/${params.id}`)
+                loader:({params})=>fetch(`https://assingment-11-server-three.vercel.app/all-food/${params.id}`)
             },
             {
                 path:'/myorder',

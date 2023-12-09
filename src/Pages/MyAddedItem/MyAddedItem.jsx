@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import useAuth from "../../Hooks/useAuth";
 import FoodCard from "../../Components/FoodCard/FoodCard";
-import { Helmet } from "react-helmet";
 import useAxios from "../../Hooks/useAxios";
 import Scalition from "../../Components/Scalition/Scalition";
+import { Helmet } from "react-helmet-async";
 
 const MyAddedItem = () => {
   const [item, setItem] = useState([]);
@@ -25,8 +25,8 @@ const MyAddedItem = () => {
   return (
     <>
     <Helmet>
-                <title>Cafue | MyItem</title>
-            </Helmet>
+      <title>Cafue | My Added Food</title>
+    </Helmet>
       <div
         className=" h-[300px] px-5 flex flex-col justify-center"
         style={{
